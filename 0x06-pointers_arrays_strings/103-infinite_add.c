@@ -7,7 +7,7 @@
  * @n2: second number
  * @r: result
  * @size_r: result size
- * Return: the addition of n1 and n2
+ * Return: address of r or 0
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
@@ -16,7 +16,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	for (i = 0; n1[i]; i++)
 		;
-	for (j = 0; n2[i]; j++)
+	for (j = 0; n2[j]; j++)
 		;
 	if (i > size_r || j > size_r)
 		return (0);
