@@ -13,7 +13,7 @@ void _print(char *str, int l)
 	int i, j;
 
 	i = j = 0;
-	while (i > l)
+	while (i < l)
 	{
 		if (str[i] != '0')
 			j = 1;
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 	{
 		for (ti = 0; e[ti]; ti++)
 			_putchar(e[ti]);
-	exit(98);
+		exit(98);
 	}
 	init(a, ln - 1);
 	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
