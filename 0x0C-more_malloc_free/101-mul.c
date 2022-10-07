@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
 
 /**
  * _print - moves a string one place to the left and prints the string
@@ -20,11 +18,11 @@ void _print(char *str, int l)
 		if (str[i] != '0')
 			j = 1;
 		if (j || i == l - 1)
-			putchar(str[i]);
+			_putchar(str[i]);
 		i++;
 	}
 
-	putchar('\n');
+	_putchar('\n');
 	free(str);
 }
 
@@ -65,7 +63,7 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 }
 /**
  * check_for_digits - checks the arguments to ensure they are digits
- * @av:pointer to arguments
+ * @av: pointer to arguments
  *
  * Return: 0 if digits, 1 if not
  */
@@ -80,7 +78,6 @@ int check_for_digits(char **av)
 			if (av[i][j] < '0' || av[i][j] > '9')
 				return (1);
 		}
-
 	}
 	return (0);
 }
@@ -88,7 +85,7 @@ int check_for_digits(char **av)
 /**
  * init - initializes a string
  * @str: string to initialize
- * @l: length of string
+ * @l: length og string
  *
  * Return: void
  */
@@ -98,7 +95,7 @@ void init(char *str, int l)
 
 	for (i = 0; i < l; i++)
 		str[i] = '0';
-	str[i] = '\0'
+	str[i] = '\0';
 }
 
 /**
@@ -113,12 +110,12 @@ int main(int argc, char *argv[])
 	int l1, l2, ln, ti, i;
 	char *a;
 	char *t;
-	char e[] = "Error\n"
+	char e[] = "Error\n";
 
 	if (argc != 3 || check_for_digits(argv))
 	{
 		for (ti = 0; e[ti]; ti++)
-			putchar(e[ti]);
+			_putchar(e[ti]);
 		exit(98);
 	}
 	for (l1 = 0; argv[1][l1]; l1++)
@@ -130,7 +127,7 @@ int main(int argc, char *argv[])
 	if (a == NULL)
 	{
 		for (ti = 0; e[ti]; ti++)
-			putchar(e[ti]);
+			_putchar(e[ti]);
 		exit(98);
 	}
 	init(a, ln - 1);
@@ -140,7 +137,7 @@ int main(int argc, char *argv[])
 		if (t == NULL)
 		{
 			for (ti = 0; e[ti]; ti++)
-				putchar(e[ti]);
+				_putchar(e[ti]);
 			free(a);
 			exit(98);
 		}
